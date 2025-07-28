@@ -15,7 +15,6 @@ if ($stmt->num_rows > 0){
     $STMT->bind_result ($hashed);
     $stmt->fetch();
 
-
     if (password_verify($password, $hashed)){
         echo "Login Success ";
 
