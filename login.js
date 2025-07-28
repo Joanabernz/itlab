@@ -1,9 +1,11 @@
-function validateForm(){
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-    if (user === " " || pass === " "){
-        alert("Both frields are required"); 
-        return false;
-    }
-    return true;
+function validateForm() {
+  let user = document.getElementById("username").value.trim();
+  let pass = document.getElementById("password").value.trim();
+
+  if (user === "" || pass === "") {
+    alert("Both fields are required.");
+    return false;
+  }
+
+  return true;
 }
