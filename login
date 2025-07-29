@@ -1,27 +1,26 @@
 <?php
+
+$conn = mysqli_connect("localhost", "root", "", "itlab");
+
+
+if (!$conn) {
+    die("Connection failed");
+}
+
+
 $username = $_POST['username'];
 $password = $_POST['password'];
- 
-$conn = new mysqli('localhost', 'root', 'root', 'itlab');
 
-$sql = "Select password from users where username = ?";
+$sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+$result = mysqli_query($conn, $sql);
 
-$stmt = $conn->prepare($sql);
-$stmt-> bind_param("s", $username);
-$stmt-> execute();
-$stmt-> store_result();
 
-if ($stmt->num_rows > 0){
-    $STMT->bind_result ($hashed);
-    $stmt->fetch();
+if (mysqli_num_rows($result) > 0) {
+    echo "Login successful!";
+} else {
+    echo "Login failed!";
+}
 
-    if (password_verify($password, $hashed)){
-        echo "Login Success ";
 
-    }else {
-        echo "Wrong Password";
-    }
-    } else {
-        echo "User not Found";
-    }
+mysqli_close($conn);
 ?>
