@@ -1,22 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>login</h1>
-    <form onsubmit="return validateForm()" method="POST" action="login.php">
-<label>USERNAME</label>
-<input type="text" id="username" name="username" required/>
+<html>
+    <title>LOGIN</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            form {
+                max-width: 300px;
+                margin: auto;
 
-<label>PASSWORD</label>
-<input type="password" id="password" name="password" required/>
+                }
+            }
+        
+    </style>
+    <head>
+        <body>
 
-<button type="submit">login</button>
+        <h1>LOGIN</h1>
+    <form onsubmit="return validateForm()" method="post" action="login.php">
+        <label> Username: </label>
+        <input type="text" id="username" name="username" />
 
+        <label> Password:</label>
+        <input type="text" id="password" name="password" />
 
+        <button type="submit">LOGIN</button>
     </form>
-</body>
+    <script src="login.js"></script>
+        </body>
+    </head>
 </html>
